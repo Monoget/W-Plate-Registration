@@ -14,6 +14,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- SweetAlert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <title>Contact - Plate and Registration</title>
 </head>
@@ -55,7 +58,8 @@
                             <a class="nav-link active" aria-current="page" href="contact.html">Contact US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-info text-white" href="callto:+16464000666">Questions? (646)400-0666</a>
+                            <a class="nav-link btn btn-info text-white" href="callto:+16464000666">Questions?
+                                (646)400-0666</a>
                         </li>
                     </ul>
                 </div>
@@ -88,36 +92,45 @@
                 <div class="card">
                     <div class="card-body">
                         <h4>SEND US A MESSAGE</h4>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name">
+                        <form action="email.php" method="post">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" name="name" class="form-control" id="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="number" class="form-label">Phone Number</label>
+                                        <input type="text" name="number" class="form-control" id="number" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control" id="email"
+                                               placeholder="name@example.com" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Email</label>
+                                        <input type="text" name="subject" class="form-control" id="subject" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" name="message" id="message" rows="3"
+                                                  required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg">Send Now</button>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <div class="mb-3">
-                                    <label for="number" class="form-label">Phone Number</label>
-                                    <input type="text" class="form-control" id="number">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                                           placeholder="name@example.com">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <button type="button" class="btn btn-primary btn-lg">Send Now</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -136,7 +149,8 @@
                     <h6 class="text-danger">
                         NOTICE: THIS TRANSACTION OR SERVICE IS ALSO AVAILABLE, AT NO ADDITIONAL CHARGE, DIRECTLY FROM
                         THE
-                        OFFICIAL DEPARTMENT OF MOTOR VEHICLES WEBSITE AT <a href="https://dmv.ny.gov/" target="_blank" class="link text-danger">WWW.DMV.NY.GOV</a>
+                        OFFICIAL DEPARTMENT OF MOTOR VEHICLES WEBSITE AT <a href="https://dmv.ny.gov/" target="_blank"
+                                                                            class="link text-danger">WWW.DMV.NY.GOV</a>
                     </h6>
                 </div>
                 <div class="col-lg-6 d-flex justify-content-lg-end align-items-lg-end mb-3">
@@ -149,7 +163,8 @@
                         </p>
                         <p>
                             <strong>Address:</strong><br/>
-                            <a href="https://maps.google.com/maps?ll=40.746539,-73.895887&z=14&t=m&hl=en&gl=SG&mapclient=embed&cid=18267002666735807480" target="_blank" class="link">
+                            <a href="https://maps.google.com/maps?ll=40.746539,-73.895887&z=14&t=m&hl=en&gl=SG&mapclient=embed&cid=18267002666735807480"
+                               target="_blank" class="link">
                                 69-07 Roosevelt Avenue, 2nd FL
                                 Woodside, NY-11377
                             </a>
@@ -174,7 +189,8 @@
     <div class="text-center bg-dark pt-4 pb-2">
         <div class="container">
             <p class="text-white">
-                © 2022 by  <a href="https://skdrivingschoolny.com/" class="footer-link">SK Driving School, NewYork</a> | DMV Partnered Service Center
+                © 2022 by <a href="https://skdrivingschoolny.com/" class="footer-link">SK Driving School, NewYork</a> |
+                DMV Partnered Service Center
             </p>
         </div>
     </div>
@@ -183,5 +199,33 @@
 
 <!-- Bootstrap JS -->
 <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    let x = getCookie('alert');
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    console.log(x);
+    if(x==1){
+        Swal.fire({
+            title: 'Successful',
+            text: 'Request Successful',
+            imageUrl: window.location.origin+'/assets/images/favicon.png',
+            imageWidth: 40,
+            imageHeight: 40,
+            imageAlt: 'Custom image',
+        })
+        eraseCookie('alert');
+    }
+    function eraseCookie(name) {
+        document.cookie = name +'=;';
+    }
+</script>
 </body>
 </html>
