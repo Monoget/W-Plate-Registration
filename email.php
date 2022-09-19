@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
                     <body style='background-color: #eee; font-size: 16px;'>
                         <div style='max-width: 600px; min-width: 200px; background-color: #fff; padding: 20px; margin: auto;'>
                         
-                            <h1  style='margin-left: auto;margin-right: auto;'>Plate and Registration</h1>
+                            <h1  style='text-align: center;'>Plate and Registration</h1>
                             
                             <h3 style='color:black'>Hi $u!</h3>
                                 
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
         $i++;
     }
 
-    $email_to = 'monoget1@gmail.com';
+    $email_to = 'skdrivingschoolny@gmail.com';
     $subject = $subject_contact;
 
     $headers = "From: Plate and Registration <" . $from_email . ">\r\n";
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
                     <body style='background-color: #eee; font-size: 16px;'>
                         <div style='max-width: 600px; min-width: 200px; background-color: #fff; padding: 20px; margin: auto;'>
                           
-                            <h1  style='margin-left: auto;margin-right: auto;'>Plate and Registration</h1>
+                            <h1  style='text-align: center;'>Plate and Registration</h1>
                             
                             <p style='text-align: center;color:green;font-weight:bold'>New Plate Registration Info Data</p>   
                         
